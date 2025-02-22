@@ -1,7 +1,10 @@
-import ErrorLayout from "@layouts/ErrorLayout";
-import MainLayout from "@layouts/MainLayout";
-import Home from "@pages/Home";
 import { createBrowserRouter } from "react-router-dom";
+import {
+  Contact,
+  ErrorLayout,
+  Home,
+  MainLayout,
+} from "@components/loadableComponent";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +15,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
