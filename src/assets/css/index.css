@@ -1,1 +1,22 @@
 @import "tailwindcss";
+@import "./user_custom.css";
+
+
+@layer base{
+    :root {
+        --font-base: "Plus Jakarta Sans", sans-serif;
+        --font-number: "Poppins", sans-serif;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+      overflow-x: hidden;
+    }
+    body {
+      overflow-x: hidden;
+      font-family: var(--font-base);
+    }
+}

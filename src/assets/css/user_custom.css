@@ -1,0 +1,3 @@
+.container-header{
+    @apply md:max-h-[65px] max-h-[55px] w-full flex flex-row justify-between items-center bg-purple-900 text-white py-4 md:px-[4rem] px-[1rem] fixed top-0 left-0 z-[1000];
+}

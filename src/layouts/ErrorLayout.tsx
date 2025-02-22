@@ -15,7 +15,7 @@ const ErrorLayout = () => {
       </p>
       <button
         onClick={handleGoHome}
-        className="text-purple-500 hover:underline"
+        className="text-purple-800 hover:underline font-bold cursor-pointer"
       >
         Go back to Home
       </button>
