@@ -1,34 +1,43 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import FooterColumn from "./FooterColumn";
+import FooterNavigation from "./FooterNavigation";
+import FooterContact from "./FooterContact";
+import FooterNewsletter from "./FooterNewsletter";
+import FooterSocial from "./FooterSocial";
+import FooterCopyright from "./FooterCopyright";
 
 const Footer: React.FC = () => {
-  const navigate = useNavigate();
-  const handleNavigate = (path: string) => {
-    navigate(path);
-  };
   return (
-    <footer className="bg-purple-900 text-white py-4 min-h-[100px] flex justify-center items-center">
-      <div className="container mx-auto text-center">
-        <div className="text-base">
-          &copy; {new Date().getFullYear()} HCMC Metro Map. All rights reserved.
-        </div>
-        <div className="text-sm flex justify-center items-center gap-2">
-          <div
-            onClick={() => handleNavigate("/privacy-policy")}
-            className="text-pink-500 hover:underline"
-          >
-            Privacy Policy
+    <div className="bg-gradient-to-r from-purple-900 via-purple-800 to-pink-900 text-white">
+      <div className="px-5 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="space-y-4">
+            <div className="text-2xl font-bold tracking-wider">
+              HCMC Metro Map
+            </div>
+            <div className="text-gray-200 text-sm">
+              Explore Ho Chi Minh City's evolving metro system with our
+              interactive map. Plan your journey and stay updated with the
+              latest developments.
+            </div>
           </div>
-          {" | "}
-          <div
-            onClick={() => handleNavigate("/terms-of-service")}
-            className="text-pink-500 hover:underline"
-          >
-            Terms of Service
-          </div>
+          <FooterColumn title="Navigation">
+            <FooterNavigation />
+          </FooterColumn>
+
+          <FooterColumn title="Contact">
+            <FooterContact />
+          </FooterColumn>
+
+          <FooterColumn title="Stay Updated">
+            <FooterNewsletter />
+          </FooterColumn>
         </div>
+
+        <FooterSocial />
+        <FooterCopyright />
       </div>
-    </footer>
+    </div>
   );
 };
 

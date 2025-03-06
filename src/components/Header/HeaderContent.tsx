@@ -16,7 +16,7 @@ const HeaderContent: React.FC<IHeaderContent> = (props) => {
         <div
           key={index}
           onClick={() => onClick && onClick(item?.path)}
-          className="hover:underline text-lg md:text-xl cursor-pointer hover:text-pink-500"
+          className="md:hover:underline text-base md:text-xl cursor-pointer hover:text-pink-300 transition-colors duration-200 "
         >
           {item?.content}
         </div>
