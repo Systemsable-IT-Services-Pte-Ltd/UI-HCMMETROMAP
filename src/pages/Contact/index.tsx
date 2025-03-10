@@ -397,7 +397,7 @@ const Contact: React.FC = () => {
                 <div>
                   <button
                     type="submit"
-                    className={`w-full py-3 px-4 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
+                    className={`w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
                       isLoading ? "opacity-75 cursor-not-allowed" : ""
                     }`}
                     disabled={isLoading}
