@@ -6,7 +6,7 @@ interface IHeaderContent {
 const HeaderContent: React.FC<IHeaderContent> = (props) => {
   const { onClick } = props;
   const navItems = [
-    { content: "Home", path: "/" },
+    { content: "Maps", path: "/maps" },
     { content: "About", path: "/about" },
     { content: "Contact", path: "/contact" },
   ];
