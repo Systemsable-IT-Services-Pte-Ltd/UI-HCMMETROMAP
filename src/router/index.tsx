@@ -1,10 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import {
-  Contact,
-  ErrorLayout,
-  Home,
-  MainLayout,
-} from "@components/loadableComponent";
+import { Contact, About } from "@components/loadableComponent";
+import MainLayout from "@layouts/MainLayout";
+import ErrorLayout from "@layouts/ErrorLayout";
+import Home from "@pages/Home";
 
 export const router = createBrowserRouter([
   {
@@ -13,12 +11,16 @@ export const router = createBrowserRouter([
     errorElement: <ErrorLayout />,
     children: [
       {
-        path: "/",
+        path: "/maps",
         element: <Home />,
       },
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },
