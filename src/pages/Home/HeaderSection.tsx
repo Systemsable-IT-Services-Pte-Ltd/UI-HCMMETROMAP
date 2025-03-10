@@ -8,7 +8,7 @@ interface HeaderSectionProps {
 }
 
 const HeaderSection: React.FC<HeaderSectionProps> = ({
-  setActiveTab,
+  //   setActiveTab,
   handleNavigate,
   scrollToMap,
 }) => (
