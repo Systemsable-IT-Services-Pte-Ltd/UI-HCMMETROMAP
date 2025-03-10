@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bannerImage from "../../assets/img/1. Banner.jpg";
+import bannerImage from "../../assets/images/banner/1. Banner.jpg";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
