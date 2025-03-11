@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bannerImage from "../../assets/images/banner/1. Banner.jpg";
+import hcmcBackground from "@assets/images/backround/hcmcmetro-background.jpg";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -54,11 +54,11 @@ const Contact: React.FC = () => {
       <div
         className="relative w-full min-h-[500px] flex items-center justify-center bg-center bg-cover bg-no-repeat"
         style={{
-          backgroundImage: `url(${bannerImage})`, // Đường dẫn ảnh trong thư mục assets
+          backgroundImage: `url(${hcmcBackground})`, // Đường dẫn ảnh trong thư mục assets
         }}
       >
         {/* Overlay mờ tím/pink */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/80 to-pink-900/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent" />
 
         {/* Nội dung */}
         <div className="relative container mx-auto px-4 text-center z-10 flex flex-col justify-center items-center h-full">
