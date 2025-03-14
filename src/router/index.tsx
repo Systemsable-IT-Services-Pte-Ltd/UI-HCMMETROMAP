@@ -3,7 +3,7 @@ import { Contact, About } from "@components/loadableComponent";
 import MainLayout from "@layouts/MainLayout";
 import ErrorLayout from "@layouts/ErrorLayout";
 import Home from "@pages/Home";
-import Maps from "@pages/Maps";
+import Lines from "@pages/Lines";
 
 export const router = createBrowserRouter([
   {
@@ -16,8 +16,8 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/maps",
-        element: <Maps/>,
+        path: "/lines",
+        element: <Lines/>,
       },
       {
         path: "/contact",

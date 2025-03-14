@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import hcmcBackground from "@assets/images/backround/hcmcmetro-background.jpg";
+import hcmcBackground from "@assets/images/background/hcmcmetro-background.jpg";
 
 interface MetroLine {
   id: string;
@@ -8,7 +8,7 @@ interface MetroLine {
   stations: string[];
 }
 
-const Maps: React.FC = () => {
+const Lines: React.FC = () => {
   const [selectedLine, setSelectedLine] = useState<string | null>(null);
 
   // HCMC Metro line data
@@ -490,4 +490,4 @@ const metroLines = [
   },
 ];
 
-export default Maps;
+export default Lines;

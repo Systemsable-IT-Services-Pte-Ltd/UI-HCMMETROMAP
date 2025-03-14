@@ -1,6 +1,6 @@
 import React from "react";
 import { FaMapMarkedAlt, FaRoute } from "react-icons/fa";
-import hcmcBackground from "@assets/images/backround/hcmcmetro-background.jpg";
+import hcmcBackground from "@assets/images/background/hcmcmetro-background.jpg";
 interface HeaderSectionProps {
   setActiveTab?: (tab: string) => void;
   handleNavigate?: (path: string) => void;

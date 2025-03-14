@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import hcmcBackground from "@assets/images/backround/hcmcmetro-background.jpg";
+import hcmcBackground from "@assets/images/background/hcmcmetro-background.jpg";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
