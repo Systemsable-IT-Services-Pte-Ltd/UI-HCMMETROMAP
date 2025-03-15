@@ -12,6 +12,8 @@ interface FormInputProps {
   disabled?: boolean;
   autoFocus?: boolean;
   formatting?: (value: string) => string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: () => void;
 }
 
 const FormInput: React.FC<FormInputProps> = memo(
@@ -26,6 +28,8 @@ const FormInput: React.FC<FormInputProps> = memo(
     disabled = false,
     autoFocus = false,
     formatting = (value: string) => value,
+    onChange: customOnChange,
+    onBlur: customOnBlur,
   }) => {
     const {
       control,
@@ -50,6 +54,9 @@ const FormInput: React.FC<FormInputProps> = memo(
           break;
       }
       onChange(formattedValue);
+      if (customOnChange) {
+        customOnChange(e);
+      }
     };
 
     return (
@@ -68,7 +75,13 @@ const FormInput: React.FC<FormInputProps> = memo(
                 ref={ref}
                 value={value ?? ""}
                 onChange={(e) => handleChange(e, onChange)}
-                onBlur={onBlur}
+                onBlur={() => {
+                  if (customOnBlur) {
+                    customOnBlur();
+                  } else {
+                    onBlur();
+                  }
+                }}
                 type={type}
                 placeholder={placeholder}
                 disabled={disabled}

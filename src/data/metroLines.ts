@@ -16,6 +16,7 @@ export interface MetroStation {
   isTerminal: boolean; // Whether this is a terminal station
   exits?: string[]; // Exit points/directions
   nearbyAttractions?: string[]; // Points of interest near the station
+  slug: string; // Add slug field for URL
 }
 
 export interface MetroLine {
@@ -38,12 +39,13 @@ export interface MetroLine {
 
 // Data for Line 1 stations
 export const metroStations: Record<string, MetroStation> = {
-  "ben-thanh": {
-    id: "ben-thanh",
+  "L1-01": {
+    id: "L1-01",
     name: {
       en: "Ben Thanh",
       vi: "Bến Thành",
     },
+    slug: "ben-thanh",
     coordinates: {
       x: 50,
       y: 50,
@@ -72,12 +74,13 @@ export const metroStations: Record<string, MetroStation> = {
       "Bitexco Financial Tower",
     ],
   },
-  "opera-house": {
-    id: "opera-house",
+  "L1-02": {
+    id: "L1-02",
     name: {
       en: "Opera House",
       vi: "Nhà hát Thành phố",
     },
+    slug: "opera-house",
     coordinates: {
       x: 70,
       y: 50,
@@ -94,12 +97,13 @@ export const metroStations: Record<string, MetroStation> = {
       "Hotel Continental",
     ],
   },
-  "ba-son": {
-    id: "ba-son",
+  "L1-03": {
+    id: "L1-03",
     name: {
       en: "Ba Son",
       vi: "Ba Son",
     },
+    slug: "ba-son",
     coordinates: {
       x: 90,
       y: 50,
@@ -112,12 +116,13 @@ export const metroStations: Record<string, MetroStation> = {
     exits: ["Ton Duc Thang Street", "Nguyen Huu Canh Street"],
     nearbyAttractions: ["Ba Son Shipyard Historical Site", "Saigon River"],
   },
-  "van-thanh-park": {
-    id: "van-thanh-park",
+  "L1-04": {
+    id: "L1-04",
     name: {
       en: "Van Thanh Park",
-      vi: "Công viên Văn Thánh",
+      vi: "Văn Thánh",
     },
+    slug: "van-thanh-park",
     coordinates: {
       x: 110,
       y: 60,
@@ -130,12 +135,13 @@ export const metroStations: Record<string, MetroStation> = {
     exits: ["Dien Bien Phu Street", "Nguyen Huu Canh Street"],
     nearbyAttractions: ["Van Thanh Park", "Van Thanh Tourist Village"],
   },
-  "tan-cang": {
-    id: "tan-cang",
+  "L1-05": {
+    id: "L1-05",
     name: {
       en: "Tan Cang",
       vi: "Tân Cảng",
     },
+    slug: "tan-cang",
     coordinates: {
       x: 130,
       y: 70,
@@ -148,12 +154,13 @@ export const metroStations: Record<string, MetroStation> = {
     exits: ["Dien Bien Phu Street", "Nguyen Huu Canh Street"],
     nearbyAttractions: ["Tan Cang Port", "Saigon Pearl Residential Complex"],
   },
-  "thao-dien": {
-    id: "thao-dien",
+  "L1-06": {
+    id: "L1-06",
     name: {
       en: "Thao Dien",
       vi: "Thảo Điền",
     },
+    slug: "thao-dien",
     coordinates: {
       x: 150,
       y: 80,
@@ -166,12 +173,13 @@ export const metroStations: Record<string, MetroStation> = {
     exits: ["Hanoi Highway", "Thao Dien Street"],
     nearbyAttractions: ["Thao Dien Pearl Plaza", "International Schools Area"],
   },
-  "an-phu": {
-    id: "an-phu",
+  "L1-07": {
+    id: "L1-07",
     name: {
       en: "An Phu",
       vi: "An Phú",
     },
+    slug: "an-phu",
     coordinates: {
       x: 170,
       y: 90,
@@ -184,12 +192,13 @@ export const metroStations: Record<string, MetroStation> = {
     exits: ["Hanoi Highway", "Luong Dinh Cua Street"],
     nearbyAttractions: ["Metro An Phu Supermarket", "An Phu Supermarket"],
   },
-  "rach-chiec": {
-    id: "rach-chiec",
+  "L1-08": {
+    id: "L1-08",
     name: {
       en: "Rach Chiec",
       vi: "Rạch Chiếc",
     },
+    slug: "rach-chiec",
     coordinates: {
       x: 190,
       y: 100,
@@ -202,12 +211,13 @@ export const metroStations: Record<string, MetroStation> = {
     exits: ["Hanoi Highway", "Rach Chiec Sports Complex"],
     nearbyAttractions: ["Rach Chiec Sports Complex", "Rach Chiec Canal"],
   },
-  "phuoc-long": {
-    id: "phuoc-long",
+  "L1-09": {
+    id: "L1-09",
     name: {
       en: "Phuoc Long",
       vi: "Phước Long",
     },
+    slug: "phuoc-long",
     coordinates: {
       x: 210,
       y: 110,
@@ -220,12 +230,13 @@ export const metroStations: Record<string, MetroStation> = {
     exits: ["Hanoi Highway", "Phuoc Long Area"],
     nearbyAttractions: ["Phuoc Long Residential Area"],
   },
-  "binh-thai": {
-    id: "binh-thai",
+  "L1-10": {
+    id: "L1-10",
     name: {
       en: "Binh Thai",
       vi: "Bình Thái",
     },
+    slug: "binh-thai",
     coordinates: {
       x: 230,
       y: 120,
@@ -238,12 +249,13 @@ export const metroStations: Record<string, MetroStation> = {
     exits: ["Hanoi Highway", "Binh Thai Intersection"],
     nearbyAttractions: ["Binh Thai Intersection"],
   },
-  "thu-duc": {
-    id: "thu-duc",
+  "L1-11": {
+    id: "L1-11",
     name: {
       en: "Thu Duc",
       vi: "Thủ Đức",
     },
+    slug: "thu-duc",
     coordinates: {
       x: 250,
       y: 130,
@@ -259,12 +271,13 @@ export const metroStations: Record<string, MetroStation> = {
       "Thu Duc Market",
     ],
   },
-  "hi-tech-park": {
-    id: "hi-tech-park",
+  "L1-12": {
+    id: "L1-12",
     name: {
       en: "Hi-Tech Park",
       vi: "Khu Công nghệ cao",
     },
+    slug: "hi-tech-park",
     coordinates: {
       x: 270,
       y: 140,
@@ -277,12 +290,13 @@ export const metroStations: Record<string, MetroStation> = {
     exits: ["Hanoi Highway", "SHTP Main Gate"],
     nearbyAttractions: ["Saigon Hi-Tech Park", "FPT Software Campus"],
   },
-  "national-university": {
-    id: "national-university",
+  "L1-13": {
+    id: "L1-13",
     name: {
       en: "National University",
       vi: "Đại học Quốc gia",
     },
+    slug: "national-university",
     coordinates: {
       x: 290,
       y: 150,
@@ -298,12 +312,13 @@ export const metroStations: Record<string, MetroStation> = {
       "University of Technology",
     ],
   },
-  "suoi-tien": {
-    id: "suoi-tien",
+  "L1-14": {
+    id: "L1-14",
     name: {
       en: "Suoi Tien Terminal",
       vi: "Bến xe Suối Tiên",
     },
+    slug: "suoi-tien-terminal",
     coordinates: {
       x: 310,
       y: 160,
@@ -345,20 +360,20 @@ export const metroLines: Record<string, MetroLine> = {
     },
     color: "#E91E63", // Pink color
     stations: [
-      "ben-thanh",
-      "opera-house",
-      "ba-son",
-      "van-thanh-park",
-      "tan-cang",
-      "thao-dien",
-      "an-phu",
-      "rach-chiec",
-      "phuoc-long",
-      "binh-thai",
-      "thu-duc",
-      "hi-tech-park",
-      "national-university",
-      "suoi-tien",
+      "L1-01",
+      "L1-02",
+      "L1-03",
+      "L1-04",
+      "L1-05",
+      "L1-06",
+      "L1-07",
+      "L1-08",
+      "L1-09",
+      "L1-10",
+      "L1-11",
+      "L1-12",
+      "L1-13",
+      "L1-14",
     ],
     status: "operational",
     openingDate: "2024-12-22",

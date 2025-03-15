@@ -23,7 +23,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:flex gap-4">
+      <div className="hidden md:flex gap-6">
         <HeaderContent onClick={handleNavigation} />
       </div>
 

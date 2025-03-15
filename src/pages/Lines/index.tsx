@@ -7,7 +7,7 @@ interface MetroLine {
   stations: string[];
 }
 
-const Maps: React.FC = () => {
+const Lines: React.FC = () => {
   const [selectedLine, setSelectedLine] = useState<string | null>(null);
 
   // HCMC Metro line data
@@ -469,4 +469,4 @@ const metroLines = [
   },
 ];
 
-export default Maps;
+export default Lines;

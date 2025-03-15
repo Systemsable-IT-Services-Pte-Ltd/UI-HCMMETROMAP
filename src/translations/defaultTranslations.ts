@@ -1,0 +1,103 @@
+export type Language = "en" | "vi";
+export type TranslationRecord = Record<string, string>;
+export type TranslationSet = Record<Language, TranslationRecord>;
+
+export const defaultTranslations: TranslationSet = {
+  en: {
+    search: "Search",
+    searchPlaceholder: "Search for stations or points of interest",
+    stations: "Stations",
+    metroMap: "Metro Map",
+    plannedLines: "Planned Lines",
+    stationFeatures: "Station Features",
+    nearbyAttractions: "Nearby Attractions",
+    stationMap: "Station Map",
+    viewFullDetails: "View full details",
+    readMore: "Read more",
+    latestUpdates: "Latest Updates",
+    viewAllUpdates: "View All Updates",
+    mapNotAvailable: "Map not available for this station.",
+    noUpdatesAvailable: "No updates available at the moment.",
+    tryAgain: "Try Again",
+    aboutLine1: "About Line 1",
+    clickStationInfo: "Click on any station for more information",
+    noDetailedInformation:
+      "No detailed information available for this station.",
+    lines: "Lines",
+    about: "About",
+    contact: "Contact",
+    metroLines: "Metro Lines",
+    hcmcMetroMap: "HCMC Metro Map",
+    exploreMetro:
+      "Explore Ho Chi Minh City's modern metro system with our interactive map and real-time information.",
+    viewMetroMap: "View Metro Map",
+    planJourney: "Plan Journey",
+    aboutTitle: "About HCMC Metro",
+    aboutDescription:
+      "The Ho Chi Minh City Metro is a rapid transit system under construction in Ho Chi Minh City, Vietnam.",
+    projectOverview: "Project Overview",
+    projectOverviewText:
+      "The metro system is designed to be the backbone of the city's public transport network, consisting of 6 lines with a total length of 128 kilometers.",
+    line1Overview: "Line 1 Overview",
+    line1OverviewText:
+      "Metro Line 1 (Ben Thanh - Suoi Tien) is the first metro line in Ho Chi Minh City, stretching 19.7km from Ben Thanh Market to Suoi Tien Theme Park.",
+    keyFeatures: "Key Features",
+    stations14: "14 stations",
+    elevated: "17.1km elevated section",
+    underground: "2.6km underground section",
+    timeline: "Project Timeline",
+    startDate: "Construction Start: 2012",
+    completionDate: "Expected Completion: 2024",
+    impact: "Impact on City",
+    impactText:
+      "The metro system will significantly reduce traffic congestion and environmental pollution while improving mobility for millions of residents.",
+  },
+  vi: {
+    search: "Tìm kiếm",
+    searchPlaceholder: "Tìm kiếm ga hoặc điểm tham quan",
+    stations: "Các ga",
+    metroMap: "Bản Đồ Metro",
+    plannedLines: "Tuyến Quy Hoạch",
+    stationFeatures: "Tiện ích ga",
+    nearbyAttractions: "Điểm tham quan lân cận",
+    stationMap: "Bản đồ ga",
+    viewFullDetails: "Xem chi tiết đầy đủ",
+    readMore: "Đọc thêm",
+    latestUpdates: "Tin Tức Mới Nhất",
+    viewAllUpdates: "Xem Tất Cả Tin Tức",
+    mapNotAvailable: "Bản đồ không có sẵn cho ga này.",
+    noUpdatesAvailable: "Hiện tại chưa có cập nhật mới.",
+    tryAgain: "Thử Lại",
+    aboutLine1: "Về Tuyến 1",
+    clickStationInfo: "Nhấp vào trạm bất kỳ để xem thông tin chi tiết",
+    noDetailedInformation: "Không có thông tin chi tiết cho trạm này.",
+    lines: "Các Tuyến",
+    about: "Giới Thiệu",
+    contact: "Liên Hệ",
+    metroLines: "Các Tuyến Metro",
+    hcmcMetroMap: "Bản Đồ Metro TPHCM",
+    exploreMetro:
+      "Khám phá hệ thống metro hiện đại của Thành phố Hồ Chí Minh với bản đồ tương tác và thông tin thời gian thực.",
+    viewMetroMap: "Xem Bản Đồ Metro",
+    planJourney: "Lập Kế Hoạch",
+    aboutTitle: "Giới Thiệu Metro TPHCM",
+    aboutDescription:
+      "Hệ thống Metro Thành phố Hồ Chí Minh là hệ thống giao thông công cộng đang được xây dựng tại Thành phố Hồ Chí Minh, Việt Nam.",
+    projectOverview: "Tổng Quan Dự Án",
+    projectOverviewText:
+      "Hệ thống metro được thiết kế để trở thành xương sống của mạng lưới giao thông công cộng thành phố, bao gồm 6 tuyến với tổng chiều dài 128 kilômét.",
+    line1Overview: "Tổng Quan Tuyến 1",
+    line1OverviewText:
+      "Tuyến Metro số 1 (Bến Thành - Suối Tiên) là tuyến metro đầu tiên tại TPHCM, kéo dài 19,7km từ chợ Bến Thành đến Công viên Suối Tiên.",
+    keyFeatures: "Đặc Điểm Chính",
+    stations14: "14 nhà ga",
+    elevated: "17,1km đoạn trên cao",
+    underground: "2,6km đoạn ngầm",
+    timeline: "Tiến Độ Dự Án",
+    startDate: "Khởi công: 2012",
+    completionDate: "Dự kiến hoàn thành: 2024",
+    impact: "Tác Động Đến Thành Phố",
+    impactText:
+      "Hệ thống metro sẽ giảm đáng kể tình trạng ùn tắc giao thông và ô nhiễm môi trường, đồng thời cải thiện khả năng di chuyển cho hàng triệu người dân.",
+  },
+};

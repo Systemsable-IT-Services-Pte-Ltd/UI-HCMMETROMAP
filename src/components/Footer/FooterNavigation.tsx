@@ -9,7 +9,7 @@ const FooterNavigation: React.FC = () => {
 
   return (
     <div className="space-y-2">
-      {["Home", "About", "Contact", "FAQ"].map((item) => (
+      {["Home", "Lines", "About", "Contact"].map((item) => (
         <div key={item} className="flex">
           <div
             className="text-gray-200 hover:text-pink-300 cursor-pointer transition-colors duration-200 flex items-center"
