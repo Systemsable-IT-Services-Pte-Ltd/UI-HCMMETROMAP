@@ -1,26 +1,23 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
-const FooterNavigation: React.FC = () => {
-  const navigate = useNavigate();
-  const handleNavigate = (path: string) => {
-    navigate(path);
-  };
-
+const FooterNewsletter: React.FC = () => {
   return (
-    <div className="space-y-2">
-      {["Home", "About", "Contact", "FAQ"].map((item) => (
-        <div key={item} className="flex">
-          <div
-            className="text-gray-200 hover:text-pink-300 cursor-pointer transition-colors duration-200 flex items-center"
-            onClick={() => handleNavigate(`/${item.toLowerCase()}`)}
-          >
-            <span className="mr-2">›</span> {item}
-          </div>
+    <>
+      <div className="text-gray-200 text-sm">
+        Subscribe to our newsletter for the latest updates on HCMC Metro.
+      </div>
+      <div className="flex">
+        <input
+          type="email"
+          placeholder="Your email"
+          className="bg-purple-950 border border-purple-700 rounded-l-md px-4 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-pink-400"
+        />
+        <div className="bg-pink-500 hover:bg-pink-600 transition-colors duration-300 rounded-r-md px-4 text-sm flex items-center justify-center cursor-pointer">
+          Subscribe
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 };
 
-export default FooterNavigation;
+export default FooterNewsletter;

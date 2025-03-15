@@ -1,15 +1,21 @@
 import React from "react";
+import LanguageToggle from "../LanguageToggle";
+import { useTranslation } from "@hooks/useTranslation";
 
 interface IHeaderContent {
   onClick: (path: string) => void;
 }
+
 const HeaderContent: React.FC<IHeaderContent> = (props) => {
   const { onClick } = props;
+  const { t } = useTranslation();
+
   const navItems = [
-    { content: "Lines", path: "/lines" },
-    { content: "About", path: "/about" },
-    { content: "Contact", path: "/contact" },
+    { content: t("lines"), path: "/lines" },
+    { content: t("about"), path: "/about" },
+    { content: t("contact"), path: "/contact" },
   ];
+
   return (
     <>
       {navItems.map((item, index) => (
@@ -21,6 +27,7 @@ const HeaderContent: React.FC<IHeaderContent> = (props) => {
           {item?.content}
         </div>
       ))}
+      <LanguageToggle />
     </>
   );
 };

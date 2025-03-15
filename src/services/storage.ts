@@ -1,6 +1,5 @@
 export const StorageKey = {
-  FILTERS: `filters`,
-  THEME: `theme`,
+  METRO_LINES: `metro-lines`,
 };
 
 export const getDataFromStorage = async (key: string) => {

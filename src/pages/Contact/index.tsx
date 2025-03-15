@@ -49,16 +49,16 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="min-h-screen">
       {/* Header Banner */}
       <div
-        className="relative w-full min-h-[500px] flex items-center justify-center bg-center bg-cover bg-no-repeat"
+        className="relative w-full h-[60vh] flex items-center justify-center bg-center bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url(${hcmcBackground})`, // Đường dẫn ảnh trong thư mục assets
         }}
       >
         {/* Overlay mờ tím/pink */}
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/80 to-pink-900/80"></div>
 
         {/* Nội dung */}
         <div className="relative container mx-auto px-4 text-center z-10 flex flex-col justify-center items-center h-full">
@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
           {/* Contact Information */}
           <div className="bg-white p-8 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
-            Contact Information
+              Contact Information
             </h2>
 
             <div className="space-y-6">
