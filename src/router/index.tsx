@@ -1,10 +1,10 @@
+import ErrorLayout from "@layouts/ErrorLayout";
+import MainLayout from "@layouts/MainLayout";
+import About from "@pages/About";
+import Contact from "@pages/Contact";
+import Home from "@pages/Home";
+import Lines from "@pages/Lines";
 import { createBrowserRouter } from "react-router-dom";
-import {
-  Contact,
-  ErrorLayout,
-  Home,
-  MainLayout,
-} from "@components/loadableComponent";
 
 export const router = createBrowserRouter([
   {
@@ -17,8 +17,16 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/lines",
+        element: <Lines/>,
+      },
+      {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },
