@@ -13,7 +13,11 @@ const FooterNavigation: React.FC = () => {
         <div key={item} className="flex">
           <div
             className="text-gray-200 hover:text-pink-300 cursor-pointer transition-colors duration-200 flex items-center"
-            onClick={() => handleNavigate(`/${item.toLowerCase()}`)}
+            onClick={() =>
+              item === "Home"
+                ? handleNavigate("/")
+                : handleNavigate(`/${item.toLowerCase()}`)
+            }
           >
             <span className="mr-2">›</span> {item}
           </div>

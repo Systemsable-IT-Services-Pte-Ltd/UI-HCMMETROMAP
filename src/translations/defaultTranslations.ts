@@ -51,6 +51,10 @@ export const defaultTranslations: TranslationSet = {
     impact: "Impact on City",
     impactText:
       "The metro system will significantly reduce traffic congestion and environmental pollution while improving mobility for millions of residents.",
+    back: "Back",
+    stationNotFound: "Station not found.",
+    errorLoadingPost: "Error loading post or post does not exist.",
+    relatedPosts: "Related Posts",
   },
   vi: {
     search: "Tìm kiếm",
@@ -99,5 +103,9 @@ export const defaultTranslations: TranslationSet = {
     impact: "Tác Động Đến Thành Phố",
     impactText:
       "Hệ thống metro sẽ giảm đáng kể tình trạng ùn tắc giao thông và ô nhiễm môi trường, đồng thời cải thiện khả năng di chuyển cho hàng triệu người dân.",
+    back: "Trở Lại",
+    stationNotFound: "Không tìm thấy ga",
+    errorLoadingPost: "Lỗi khi tải bài viết hoặc bài viết không tồn tại",
+    relatedPosts: "Bài Viết Liên Quan",
   },
 };

@@ -11,6 +11,7 @@ import TabNavigation from "./TabNavigation";
 const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState("map");
   const mapRef = useRef<HTMLDivElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [selectedStation, setSelectedStation] = useState<MetroStation | null>(
     null
   );
@@ -32,13 +33,15 @@ const Home: React.FC = () => {
       });
     }
   }, []);
-  const handleStationSelect = useCallback(
-    (station: MetroStation) => {
-      setSelectedStation(station);
-      scrollToMap();
-    },
-    [scrollToMap]
-  );
+
+  // const handleStationSelect = useCallback(
+  //   (station: MetroStation) => {
+  //     setSelectedStation(station);
+
+  //     scrollToMap();
+  //   },
+  //   [scrollToMap]
+  // );
 
   const setActiveTabCallback = useCallback((tab: string) => {
     setActiveTab(tab);
@@ -52,7 +55,11 @@ const Home: React.FC = () => {
         scrollToMap={scrollToMap}
       />
 
-      <SearchSection onStationSelect={handleStationSelect} />
+      <SearchSection
+        onStationSelect={(station) =>
+          handleNavigate(`/station/${station?.slug}`)
+        }
+      />
 
       {/* Main Content */}
       <div className="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
@@ -75,7 +82,7 @@ const Home: React.FC = () => {
       <FeaturesSection />
 
       {/* Latest Updates Section */}
-      <LatestUpdatesSection handleNavigate={handleNavigate} />
+      <LatestUpdatesSection />
     </div>
   );
 };

@@ -4,16 +4,24 @@ import About from "@pages/About";
 import Contact from "@pages/Contact";
 import Home from "@pages/Home";
 import Lines from "@pages/Lines";
-import { createBrowserRouter } from "react-router-dom";
+import PostDetailPage from "@pages/Post/PostDetailPage";
+import StationDetailPage from "@pages/StationDetail";
+import { createBrowserRouter, ScrollRestoration } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+
+    element: (
+      <>
+        <ScrollRestoration />
+        <MainLayout />
+      </>
+    ),
     errorElement: <ErrorLayout />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home />,
       },
       {
@@ -27,6 +35,14 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/station/:slug",
+        element: <StationDetailPage />,
+      },
+      {
+        path: "/post/:slug",
+        element: <PostDetailPage />,
       },
     ],
   },

@@ -3,6 +3,7 @@ import axios from "axios";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface WPPage {
+  _embedded: any;
   id: number;
   title: {
     rendered: string;
@@ -17,6 +18,8 @@ export interface WPPage {
   date: string;
   modified: string;
   featured_media: number;
+
+  jetpack_featured_media_url: string;
   acf?: any; // Nếu trang web sử dụng Advanced Custom Fields
 }
 
@@ -69,7 +72,7 @@ const WordPressService = {
       const response = await wpApi.get("/pages", {
         params: {
           slug,
-          _embed: "wp:featuredmedia", // Lấy cả hình ảnh đại diện
+          _embed: "true", // Lấy cả hình ảnh đại diện
         },
       });
 
@@ -89,7 +92,7 @@ const WordPressService = {
       const response = await wpApi.get("/pages", {
         params: {
           slug,
-          _embed: "wp:featuredmedia",
+          _embed: "true",
         },
       });
 
@@ -102,21 +105,18 @@ const WordPressService = {
       return null;
     }
   },
-
-  // Lấy danh sách bài viết tin tức/cập nhật
-  getUpdates: async (page = 1, perPage = 4): Promise<WPPage[]> => {
+  getAllPages: async (perPage = 100): Promise<WPPage[]> => {
     try {
-      const response = await wpApi.get("/posts", {
+      const response = await wpApi.get("/pages", {
         params: {
-          page,
           per_page: perPage,
-          _embed: "wp:featuredmedia",
+          _embed: true, // Sử dụng _embed: true thay vì chỉ định rõ
         },
       });
 
       return response.data || [];
     } catch (error) {
-      console.error("Error fetching updates:", error);
+      console.error("Error fetching all pages:", error);
       return [];
     }
   },
@@ -127,7 +127,7 @@ const WordPressService = {
       const response = await wpApi.get("/posts", {
         params: {
           per_page: perPage,
-          _embed: "wp:featuredmedia",
+          _embed: "true",
         },
       });
 
@@ -138,26 +138,44 @@ const WordPressService = {
     }
   },
 
-  // Lấy thông tin chi tiết về một bài viết
-  getPost: async (slug: string): Promise<WPPage | null> => {
+  // Lấy thông tin chi tiết các bài viết
+  getPosts: async (): Promise<WPPage[] | null> => {
     try {
       const response = await wpApi.get("/posts", {
         params: {
-          slug,
-          _embed: "wp:featuredmedia",
+          per_page: 100,
+          _embed: "true",
         },
       });
 
       if (response.data && response.data.length > 0) {
-        return response.data[0];
+        return response.data;
       }
       return null;
     } catch (error) {
-      console.error(`Error fetching post ${slug}:`, error);
+      console.error(`Error fetching posts`, error);
       return null;
     }
   },
 
+  // Lấy bài viết theo slug
+  getPostBySlug: async (slug: string): Promise<WPPage> => {
+    try {
+      const response = await wpApi.get("/posts", {
+        params: {
+          slug,
+          _embed: "true",
+        },
+      });
+      if (response?.data && response?.data?.length > 0) {
+        return response?.data[0];
+      }
+      throw new Error("Post not found");
+    } catch (error) {
+      console.error("Error fetching post by slug:", error);
+      throw error;
+    }
+  },
   // Lấy hình ảnh
   getMedia: async (mediaId: number): Promise<WPMedia | null> => {
     try {
@@ -180,7 +198,7 @@ const WordPressService = {
         },
       });
 
-      return response.data || [];
+      return response?.data || [];
     } catch (error) {
       console.error(`Error searching for ${searchTerm}:`, error);
       return [];
